@@ -1,0 +1,80 @@
+:root {
+  --toast-success-hue: 150;
+  --toast-failure-hue: 20;
+  --toast-warning-hue: 205;
+  --toast-padding: 1.5em;
+  --toast-margin: 0.5em;
+  --toast-bg-color-fallback: hsl(var(--secondary-hue) 15% 100%);
+  --toast-text-color-fallback: hsl(var(--secondary-hue) 10% 25%);
+  --toast-opacity: 0.99;
+  --toast-content-gap: 1em;
+}
+
+.toast {
+  background-color: var(--toast-bg-color-fallback);
+  padding: var(--toast-padding);
+  box-shadow: hsl(var(--secondary-hue) 10% 10% / 10%) 0px 1px 3px 0px,
+    hsl(var(--secondary-hue) 10% 10% / 5%) 0px 1px 2px 0px;
+  border-radius: 0.5em;
+  position: relative;
+  color: var(--toast-text-color-fallback);
+  opacity: var(--toast-opacity);
+}
+
+.toast:hover {
+  opacity: 1;
+  box-shadow: hsl(var(--secondary-hue) 10% 10% / 30%) 0px 1px 3px 0px,
+    hsl(var(--secondary-hue) 10% 10% / 15%) 0px 1px 2px 0px;
+}
+
+.toast:not(:last-child) {
+  margin-bottom: var(--toast-margin);
+}
+
+.toast-message {
+  display: flex;
+  gap: var(--toast-content-gap);
+  align-items: top;
+}
+
+.toast-close-btn {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.75;
+}
+
+.toast--success {
+  color: hsl(var(--toast-success-hue) 97% 3%);
+  background-color: hsl(var(--toast-success-hue) 98% 99%);
+}
+
+.toast--success .icon--thumb {
+  color: hsl(var(--toast-success-hue) 90% 40%);
+}
+
+.toast--failure {
+  color: hsl(var(--toast-failure-hue) 97% 3%);
+  background-color: hsl(var(--toast-failure-hue) 98% 99%);
+}
+
+.toast--failure .icon--thumb {
+  color: hsl(var(--toast-failure-hue) 90% 40%);
+}
+
+.toast--warning {
+  color: hsl(var(--toast-warning-hue) 97% 3%);
+  background-color: hsl(var(--toast-warning-hue) 98% 99%);
+}
+
+.toast--warning .icon--thumb {
+  color: hsl(var(--toast-warning-hue) 90% 40%);
+}

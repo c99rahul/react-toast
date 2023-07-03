@@ -1,0 +1,52 @@
+:root {
+  --app-width: 500px;
+  --app-spacing: 2em;
+  --app-background: #fff;
+  --app-title-size: 1.5em;
+  --app-border-width: 4px;
+  --app-border-radius: 1em;
+  --app-group-gap: 1em;
+  --app-group-gap-lg: 1.5em;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  padding: var(--app-spacing);
+}
+
+.app {
+  margin: auto;
+  padding: var(--app-spacing);
+  max-width: var(--app-width);
+  border: var(--app-border-width) solid;
+  border-radius: var(--app-border-radius);
+  background-color: var(--app-background);
+}
+
+.app-title {
+  margin-top: 0;
+  text-align: center;
+  font-size: var(--app-title-size);
+}
+
+.app-row + .app-row {
+  margin-top: var(--app-group-gap-lg);
+}
+
+.app-row input:not([type="checkbox"]),
+.app-row select,
+.app-row button {
+  width: 100%;
+}
+
+.app-row--group {
+  display: grid;
+  gap: var(--app-group-gap) var(--app-group-gap-lg);
+}
+
+@media only screen and (min-width: 650px) {
+  .app-row--group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,71 @@
+:root {
+  --secondary-hue: 25;
+  --input-radius: 0.25em;
+  --input-margin: 0.5em;
+  --input-padding: 1em;
+  --input-border-width: 1px;
+  --paragraph-margin: 1em;
+  --text-leading: 1.5;
+
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font: 1em / var(--text-leading) sans-serif;
+  background-color: hsl(var(--secondary-hue) 15% 90%);
+  color: hsl(var(--secondary-hue) 10% 25%);
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: var(--paragraph-margin);
+}
+
+input,
+select,
+button {
+  padding: var(--input-padding);
+  border: var(--input-border-width) solid hsl(var(--secondary-hue) 10% 45%);
+  border-radius: var(--input-radius);
+  font: inherit;
+  line-height: 1;
+  background-color: hsl(var(--secondary-hue) 10% 95%);
+  color: inherit;
+}
+
+input,
+select {
+  background-color: hsl(var(--secondary-hue) 0% 100%);
+}
+
+label + input,
+label + select,
+label + button {
+  margin-top: var(--input-margin);
+}
+
+input[type="checkbox"] + label {
+  margin-left: var(--input-margin);
+}
+
+button {
+  cursor: pointer;
+  border-style: solid;
+  border-color: hsl(var(--secondary-hue) 0% 0%);
+  background-color: hsl(var(--secondary-hue) 0% 0%);
+  color: hsl(var(--secondary-hue) 10% 90%);
+}
+
+[disabled] {
+  opacity: 0.5;
+}
