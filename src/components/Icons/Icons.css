@@ -1,13 +1,10 @@
 .icon {
   width: 1em;
   height: 1em;
+  fill: currentColor;
 }
 
 .icon--lg {
   width: 1.5em;
   height: 1.5em;
-}
-
-[class^="icon"] {
-  fill: currentColor;
 }
